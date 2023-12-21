@@ -16,12 +16,12 @@ const Contacts = () => {
   return (
     <div>
       {' '}
-      <h1>Phonebook</h1>
+      {/* <h1>Phonebook</h1>
       <ContactForm />
       <h3>Contacts</h3>
       <Filter />
       {isLoading && !error && <b>Request in progress...</b>}
-      <ContactList />
+      <ContactList /> */}
     </div>
   );
 };

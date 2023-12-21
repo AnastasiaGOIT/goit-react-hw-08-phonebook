@@ -1,4 +1,5 @@
 import { combineReducers } from '@reduxjs/toolkit';
+import authSlice from './auth/auth-slice';
 import { contactReducer } from './contacts/contactSlice';
 import { filterReducer } from './filter/filterSlice';
 
