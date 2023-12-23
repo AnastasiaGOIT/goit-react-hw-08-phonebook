@@ -3,22 +3,7 @@ import { register } from '../../redux/auth/auth-operations';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
-  // const [name, setName] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
 
-  // const handleChange = ({ target: { name, value } }) => {
-  //   switch (name) {
-  //     case 'name':
-  //       return setName(value);
-  //     case 'email':
-  //       return setEmail(value);
-  //     case 'password':
-  //       return setPassword(value);
-  //     default:
-  //       return;
-  //   }
-  // };
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;

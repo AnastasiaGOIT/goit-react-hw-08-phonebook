@@ -1,6 +1,8 @@
 import { lazy } from 'react';
 
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import PrivateRoute from './guards/PrivateRoute';
+import PublicRoute from './guards/PublicRoute';
 
 import { Layout } from './Layout/Layout';
 
@@ -15,9 +17,31 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/login" element={<LogPage />} />
-          <Route path="/contacts" element={<ContactsPage />} />
+          <Route
+            path="/register"
+            element={
+              <PublicRoute>
+                <RegisterPage />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <PublicRoute>
+                <LogPage />
+              </PublicRoute>
+            }
+          />
+
+          <Route
+            path="/contacts"
+            element={
+              <PrivateRoute>
+                <ContactsPage />
+              </PrivateRoute>
+            }
+          />
         </Route>
       </Routes>
 

@@ -6,4 +6,5 @@ import { filterReducer } from './filter/filterSlice';
 export const reducer = combineReducers({
   contacts: contactReducer,
   filter: filterReducer,
+  auth: authSlice,
 });
