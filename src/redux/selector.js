@@ -14,7 +14,6 @@ export const getError = state => state.contacts.error;
 
 export const selectVisibleContacts = createSelector(
   [getContacts, getFilter],
-
   (contacts, filter) => {
     console.log(filter);
     const normalizedFilter = filter.toLowerCase();
