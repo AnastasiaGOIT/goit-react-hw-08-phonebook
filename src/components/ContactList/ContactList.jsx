@@ -5,11 +5,12 @@ import css from './ContactList.module.css';
 
 export const ContactList = () => {
   const contactsList = useSelector(getContacts);
-  console.log(contactsList);
+
   const dispatch = useDispatch();
   const handleDelete = contactId => dispatch(deleteContact(contactId));
 
   const visibleContacts = useSelector(selectVisibleContacts);
+  console.log(visibleContacts);
 
   return (
     <ul>

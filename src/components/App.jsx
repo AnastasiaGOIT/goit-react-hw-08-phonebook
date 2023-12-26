@@ -1,13 +1,13 @@
-import { lazy, useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { Route, BrowserRouter as Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { refreshUser } from '../redux/auth/auth-operations';
 // import authSelectors from '../redux/auth/auth-selector';
 import PrivateRoute from './guards/PrivateRoute';
-import PublicRoute from './guards/PublicRoute';
 
 import { Layout } from './Layout/Layout';
+import { RedirectedRoute } from './guards/RedirectedRoutes';
 
 const HomePage = lazy(() => import('../pages/HomePage'));
 const RegisterPage = lazy(() => import('../pages/RegistrationPage'));
@@ -23,37 +23,37 @@ export const App = () => {
   }, [dispatch]);
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route
-            path="/register"
-            element={
-              <PublicRoute>
-                <RegisterPage />
-              </PublicRoute>
-            }
-          />
-          <Route
-            path="/login"
-            element={
-              <PublicRoute>
-                <LogPage />
-              </PublicRoute>
-            }
-          />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route
+              path="/register"
+              element={
+                <RedirectedRoute
+                  component={RegisterPage}
+                  redirectTo="/contacts"
+                />
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <RedirectedRoute component={LogPage} redirectTo="/contacts" />
+              }
+            />
 
-          <Route
-            path="/contacts"
-            element={
-              <PrivateRoute>
-                <ContactsPage />
-              </PrivateRoute>
-            }
-          />
-        </Route>
-      </Routes>
-
+            <Route
+              path="/contacts"
+              element={
+                <PrivateRoute>
+                  <ContactsPage />
+                </PrivateRoute>
+              }
+            />
+          </Route>
+        </Routes>
+      </Suspense>
       <div
         style={{
           // height: '100vh',
