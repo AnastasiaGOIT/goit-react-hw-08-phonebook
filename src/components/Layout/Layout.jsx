@@ -6,9 +6,9 @@ import { Outlet } from 'react-router-dom';
 import authSelectors from '../../redux/auth/auth-selector';
 
 export const Layout = () => {
-  const dispatch = useDispatch();
-  const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
-  const userName = useSelector(authSelectors.getUserName);
+  //   const dispatch = useDispatch();
+  //   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+  //   const userName = useSelector(authSelectors.getUserName);
   //   useEffect(() => {
   //     (!isLoggedIn || !userName) && dispatch(refreshUser());
   //   }, [dispatch, userName, isLoggedIn]);
