@@ -2,6 +2,7 @@ import { TextField } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/auth-operations';
 import Button from '@mui/material/Button';
+import css from './RegisterForm.module.css';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -18,16 +19,17 @@ export const RegisterForm = () => {
     );
     form.reset();
   };
+
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className={css.login_form} onSubmit={handleSubmit}>
         <div>
           <label htmlFor="inputName"></label>
           <TextField
             variant="outlined"
             size="small"
             type="text"
-            label="name"
+            label="Name"
             name="name"
             id="inputName"
             margin="normal"

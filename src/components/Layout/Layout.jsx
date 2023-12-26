@@ -1,23 +1,21 @@
 import { AppBar } from 'components/AppBar/AppBar';
 import { Suspense } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-import { Outlet } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 
-// import authSelectors from '../../redux/auth/auth-selector';
+import { Outlet } from 'react-router-dom';
+import css from './Layout.module.css';
 
 export const Layout = () => {
-  //   const dispatch = useDispatch();
-  //   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
-  //   const userName = useSelector(authSelectors.getUserName);
-  //   useEffect(() => {
-  //     (!isLoggedIn || !userName) && dispatch(refreshUser());
-  //   }, [dispatch, userName, isLoggedIn]);
   return (
-    <>
+    <div
+      className={css.container}
+      style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}
+    >
       <AppBar />
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>
-    </>
+      <Toaster position="top-right" reverseOrder={false} />
+    </div>
   );
 };

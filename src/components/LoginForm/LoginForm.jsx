@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/auth/auth-operations';
 import Button from '@mui/material/Button';
 import { TextField } from '@mui/material';
+import css from './LoginForm.module.css';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -18,9 +19,10 @@ export const LoginForm = () => {
     );
     form.reset();
   };
+
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className={css.register_form} onSubmit={handleSubmit}>
         <div>
           <label htmlFor="inputEmail"></label>
           <TextField

@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { logOut } from '../../redux/auth/auth-operations';
 
@@ -8,12 +9,13 @@ const UserMenu = () => {
   const dispatch = useDispatch();
   const username = useSelector(authSelectors.getUserName);
   const handleLogout = () => dispatch(logOut());
+
   return (
     <div className={css.title}>
-      <p>Welcome, {username} </p>
-      <button onClick={handleLogout} type="button">
+      <p className={css.username}>Welcome, {username} </p>
+      <Button variant="outlined" onClick={handleLogout} type="button">
         Logout
-      </button>
+      </Button>
     </div>
   );
 };

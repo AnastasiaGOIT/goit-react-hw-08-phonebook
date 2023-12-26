@@ -7,10 +7,10 @@ import { Alert } from '@mui/material';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
-
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const contactsList = useSelector(getContacts);
+
   const onInputChange = ({ target }) => {
     if (target.name === 'name') {
       setName(target.value);
@@ -18,14 +18,17 @@ export const ContactForm = () => {
       setNumber(target.value);
     }
   };
+
   const handleSubmit = event => {
     event.preventDefault();
+
     const isExistName = contactsList.some(
       contact =>
         contact.name &&
         typeof contact.name === 'string' &&
         contact.name.toLowerCase() === name.toLowerCase()
     );
+
     const isExistPhone = contactsList.some(
       contact =>
         contact.number &&

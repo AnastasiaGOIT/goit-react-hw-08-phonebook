@@ -21,6 +21,7 @@ const authPersistConfig = {
   storage,
   whitelist: ['token'],
 };
+
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authSlice),
@@ -37,4 +38,3 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
-// export const store = configureStore({ reducer });

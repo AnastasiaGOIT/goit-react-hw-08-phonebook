@@ -1,13 +1,11 @@
 import { lazy, Suspense, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { refreshUser } from '../redux/auth/auth-operations';
-// import authSelectors from '../redux/auth/auth-selector';
 import PrivateRoute from './guards/PrivateRoute';
-
 import { Layout } from './Layout/Layout';
 import { RedirectedRoute } from './guards/RedirectedRoutes';
+import authSelectors from '../redux/auth/auth-selector';
 
 const HomePage = lazy(() => import('../pages/HomePage'));
 const RegisterPage = lazy(() => import('../pages/RegistrationPage'));
@@ -16,12 +14,15 @@ const ContactsPage = lazy(() => import('../pages/Contacts'));
 
 export const App = () => {
   const dispatch = useDispatch();
+  const isRefreshing = useSelector(authSelectors.getIsRefreshing);
 
-  // const isRefreshing = useSelector(authSelectors.getIsRefreshing);
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
-  return (
+
+  return isRefreshing ? (
+    <b>Refreshing user...</b>
+  ) : (
     <>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
