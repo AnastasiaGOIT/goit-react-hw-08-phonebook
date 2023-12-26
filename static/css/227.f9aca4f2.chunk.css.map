@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/227.f9aca4f2.chunk.css","mappings":"AAAA,gCACE,gBACF","sources":["components/RegisterForm/RegisterForm.module.css"],"sourcesContent":[".login_form {\n  margin-left: 40px;\n}\n"],"names":[],"sourceRoot":""}
