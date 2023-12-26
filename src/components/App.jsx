@@ -1,9 +1,9 @@
 import { lazy, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { Route, BrowserRouter as Routes } from 'react-router-dom';
 import { refreshUser } from '../redux/auth/auth-operations';
-import authSelectors from '../redux/auth/auth-selector';
+// import authSelectors from '../redux/auth/auth-selector';
 import PrivateRoute from './guards/PrivateRoute';
 import PublicRoute from './guards/PublicRoute';
 
