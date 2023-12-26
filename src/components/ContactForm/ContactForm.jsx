@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getContacts } from '../../redux/selector';
 import { addContact } from '../../redux/operations';
 import css from './ContactForm.module.css';
+import { Alert } from '@mui/material';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
@@ -36,6 +37,7 @@ export const ContactForm = () => {
       return;
     }
     if (isExistPhone) {
+      <Alert severity="info">`${number} is already in contacts.`</Alert>;
       alert(`${number} is already in contacts.`);
       return;
     }

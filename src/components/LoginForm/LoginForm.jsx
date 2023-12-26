@@ -1,6 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/auth/auth-operations';
+import Button from '@mui/material/Button';
+import { TextField } from '@mui/material';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -21,10 +23,13 @@ export const LoginForm = () => {
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="inputEmail"></label>
-          <input
+          <TextField
             type="email"
+            label="Email"
             name="email"
             id="inputEmail"
+            size="small"
+            margin="normal"
             area-aria-describedby="emailHelp"
           />
           <div id="emailHelp">
@@ -33,9 +38,18 @@ export const LoginForm = () => {
         </div>
         <div>
           <label htmlFor="inputPassword"></label>
-          <input type="password" name="password" id="inputPassword" />
+          <TextField
+            size="small"
+            label="Password"
+            type="password"
+            name="password"
+            margin="normal"
+            id="inputPassword"
+          />
         </div>
-        <button type="submit">Log in</button>
+        <Button variant="outlined" type="submit">
+          Log in
+        </Button>
       </form>
     </div>
   );

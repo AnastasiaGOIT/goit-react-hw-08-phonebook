@@ -5,7 +5,7 @@ export const getContacts = state => {
 };
 
 export const getFilter = state => {
-  return state.filter;
+  return state.filter.filter;
 };
 
 export const getIsLoading = state => state.contacts.isLoading;
@@ -15,13 +15,14 @@ export const getError = state => state.contacts.error;
 export const selectVisibleContacts = createSelector(
   [getContacts, getFilter],
   (contacts, filter) => {
-    console.log(filter);
-    const normalizedFilter = filter.toLowerCase();
+    const normalizedFilter =
+      typeof filter === 'string' ? filter.toLowerCase() : '';
 
     return contacts.filter(
       contact =>
         contact.name &&
         typeof contact.name === 'string' &&
+        typeof normalizedFilter === 'string' &&
         contact.name.toLowerCase().includes(normalizedFilter)
     );
   }

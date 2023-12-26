@@ -9,7 +9,7 @@ export const fetchContacts = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const { data } = await axios('contacts');
-      console.log(data);
+      // console.log(data);
 
       return data;
     } catch (e) {

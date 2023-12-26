@@ -10,7 +10,6 @@ export const ContactList = () => {
   const handleDelete = contactId => dispatch(deleteContact(contactId));
 
   const visibleContacts = useSelector(selectVisibleContacts);
-  console.log(visibleContacts);
 
   return (
     <ul>
