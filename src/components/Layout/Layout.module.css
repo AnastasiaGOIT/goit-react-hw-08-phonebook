@@ -1,5 +1,11 @@
 .container {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; */
+  /* background-color: #8b7e93; */
+  background: url('./main.webp');
+  background-size: cover;
+  /* opacity: 0.5; */
+  height: 100vh;
+  overflow: auto;
 }

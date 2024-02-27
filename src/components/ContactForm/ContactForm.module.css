@@ -1,13 +1,10 @@
 .container {
-  border: 2px solid #b122224e;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 30px;
-  width: 300px;
   font-size: 20px;
-  /* gap: 20px; */
 }
 .form__btn {
   padding: 10px 20px;
@@ -29,4 +26,5 @@
   margin-bottom: 20px;
   margin-top: 10px;
   border-color: darkred;
+  background-color: transparent;
 }

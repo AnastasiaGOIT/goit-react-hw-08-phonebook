@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from '../redux/operations';
 import { getError, getIsLoading } from '../redux/selector';
 import { useEffect } from 'react';
+import css from './Contacts.module.css';
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const Contacts = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className={css.container}>
       {' '}
       <h1>Phonebook</h1>
       <ContactForm />

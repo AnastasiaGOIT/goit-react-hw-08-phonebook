@@ -1,3 +1,16 @@
+.register_div {
+  padding-top: 100px;
+}
+
 .register_form {
-  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login_btn {
+  margin-top: 20px;
+  background-color: #dfd6d6;
+  color: black;
 }

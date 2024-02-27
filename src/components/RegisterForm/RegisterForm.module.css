@@ -1,3 +1,20 @@
-.login_form {
-  margin-left: 40px;
+.register_div {
+  padding-top: 100px;
+}
+
+.register_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.register_btn {
+  margin-top: 20px;
+  background-color: #dfd6d6;
+  color: black;
+}
+
+.register_input {
+  background-color: transparent;
 }
