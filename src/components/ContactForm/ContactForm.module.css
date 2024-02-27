@@ -8,9 +8,10 @@
 }
 .form__btn {
   padding: 10px 20px;
-  font-size: 40px;
+
   /* margin-top: 30px; */
   cursor: pointer;
+  color: black;
   background-color: #b122224e;
   outline: none;
   border-color: #1413134e;

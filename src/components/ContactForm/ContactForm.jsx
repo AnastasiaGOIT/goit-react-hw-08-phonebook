@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getContacts } from '../../redux/selector';
 import { addContact } from '../../redux/operations';
 import css from './ContactForm.module.css';
-import { Alert } from '@mui/material';
+import { Alert, Button, TextField } from '@mui/material';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
@@ -53,6 +53,7 @@ export const ContactForm = () => {
   return (
     <form className={css.container} onSubmit={handleSubmit}>
       <label htmlFor="name">Name</label>
+      {/* <TextField id="filled-basic" label="Filled" variant="filled" /> */}
       <input
         className={css.form__input}
         type="text"
@@ -74,9 +75,9 @@ export const ContactForm = () => {
         onChange={onInputChange}
       />
 
-      <button className={css.form__btn} type="submit">
+      <Button size="large" className={css.form__btn} type="submit">
         Add contact
-      </button>
+      </Button>
     </form>
   );
 };

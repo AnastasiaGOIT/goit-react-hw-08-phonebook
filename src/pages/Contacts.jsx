@@ -19,9 +19,9 @@ const Contacts = () => {
   return (
     <div className={css.container}>
       {' '}
-      <h1>Phonebook</h1>
+      <h1 className={css.text}>Try to add your new contact</h1>
       <ContactForm />
-      <h3>Contacts</h3>
+      <h3>Your contacts</h3>
       <Filter />
       {isLoading && !error && <b>Request in progress...</b>}
       <ContactList />
