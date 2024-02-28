@@ -31,8 +31,8 @@ export const LoginForm = () => {
   };
 
   return (
-    <div className={css.register_div}>
-      <form className={css.register_form} onSubmit={handleSubmit}>
+    <div className={css.login_div}>
+      <form className={css.login_form} onSubmit={handleSubmit}>
         <div>
           <label htmlFor="inputEmail"></label>
           <ThemeProvider theme={theme}>
